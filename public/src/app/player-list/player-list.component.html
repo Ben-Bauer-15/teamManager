@@ -1,0 +1,16 @@
+<table>
+  <thead *ngIf = 'allPlayers.length > 0'>
+    <tr>
+      <td>Player Name</td>
+      <td>Preferred Position</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+  <tbody *ngIf = 'allPlayers.length > 0'>
+    <tr *ngFor = 'let player of allPlayers'>
+      <td><a>{{player.name}}</a></td>
+      <td>{{player.position}}</td>
+      <td><button (click) = 'confirmDelete(player._id)'>Delete</button></td>
+    </tr>
+  </tbody>
+</table>

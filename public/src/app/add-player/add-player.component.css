@@ -1,0 +1,8 @@
+#name.ng-valid {
+    outline: 1px solid green;
+}
+
+.invalid {
+    color: red;
+    font-size: 8px;
+}

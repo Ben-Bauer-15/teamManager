@@ -1,0 +1,10 @@
+<form>
+  <h2>Add Player</h2>
+  <form (submit) = 'onSubmit()'>
+    Player Name: <input id = 'name' type="text" name = 'name' [(ngModel)] = 'playerToAdd.name' required minlength="2" #name = 'ngModel'>
+    Preferred Position: <input type="text" name='position' [(ngModel)] = 'playerToAdd.position'>
+    <input type="submit" value="Add" [disabled] = "!name.valid">
+  </form>
+</form>
+
+

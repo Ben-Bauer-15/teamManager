@@ -1,0 +1,22 @@
+<h1>Player Status - Game {{gameNumber}}</h1>
+
+<button (click) = 'changeGame(1)'>Game 1</button> | <button (click) = 'changeGame(2)'>Game 2</button> | <button (click) = 'changeGame(3)'>Game 3</button>
+
+<table>
+  <thead>
+    <tr>
+      <td>Player Name</td>
+      <td>Actions</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let player of allPlayers'>
+      <td>{{player.name}}</td>
+      <td>
+        <button [ngClass] = "{'playing' : player.games[gameNumber - 1].status == 'playing'}" (click) = 'changeStatus(player._id, gameNumber, "playing")'>Playing</button>
+        <button [ngClass] = "{'not_playing' : player.games[gameNumber - 1].status == 'not_playing'}" (click) = 'changeStatus(player._id, gameNumber, "not_playing")'>Not Playing</button>
+        <button [ngClass] = "{'undecided' : player.games[gameNumber - 1].status == 'undecided'}" (click) = 'changeStatus(player._id, gameNumber, "undecided")'>Undecided</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
